@@ -22,7 +22,7 @@ namespace MinhaDemoMvc.Models
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z\u00C0-\u00FF""'\w-]*$", ErrorMessage = "Gênero em formato inválido")] // Especificando os caracteres aceitos
         [Display(Name = "Gênero")]
-        [StringLength(30, ErrorMessage = "Máximo de 30 caracteres")]
+        [StringLength(30, ErrorMessage = "Máximo de 30 caracteres"), Required(ErrorMessage = "O campo Gênero é requerido")]
         public string Genero { get; set; }
 
         [Range(1, 1000, ErrorMessage = "Valor de 1 a 1000")] // Especificando um padrão entre valor do campo
