@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MinhaDemoMvc.Models;
-using System;
 using System.Diagnostics;
-using System.Linq;
 
 namespace MinhaDemoMvc.Controllers
 {
@@ -17,30 +15,10 @@ namespace MinhaDemoMvc.Controllers
         }
         public IActionResult Index() // convenção ter no nome do método o mesmo da action
         {
-            var filme = new Filme
-            {
-                Titulo = "Oi",
-                DataLancamento = DateTime.Now,
-                Genero = null,
-                Avaliacao = 10,
-                Valor = 20000
-            };
-
-            return RedirectToAction("Privacy", filme);
-            //return View();
+            return View();
         }
         public IActionResult Privacy(Filme filme) // convenção ter no nome do método o mesmo da action
         {
-            if (ModelState.IsValid)
-            {
-
-            }
-
-            foreach (var error in ModelState.Values.SelectMany(m => m.Errors))
-            {
-                Console.WriteLine(error.ErrorMessage);
-            }
-
             return View();
         }
 
